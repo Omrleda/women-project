@@ -1,149 +1,297 @@
-<!--
-  ملف HTML لصفحة الدكاترة (آمنة وجاهزة للرفع)
-  تعليمات:
-  1) استبدل القيم بين {{ }} ببيانات كل دكتور (الاسم، الوظيفة، الايميل، الهاتف، رابط الصفحة الشخصية).
-  2) لحماية الصفحة: ارفعها على GitHub Pages أو أي سيرفر يدعم HTTPS (GitHub Pages يوفّر HTTPS تلقائي).
-  3) لإنشاء QR امن: اعمل QR للرابط النهائي بعد الرفع (سيكون https://...)
-  4) زر "تحميل PDF" يستخدم طباعة المتصفح (window.print) لإنشاء نسخة PDF محلية.
-
-  أمثلة استبدال:
-  {{DR1_NAME}} -> د. أحمد محمد
-  {{DR1_TITLE}} -> أستاذ مساعد
-  {{DR1_EMAIL}} -> ahmed@example.com
-  {{DR1_PHONE}} -> +201234567890
-  {{DR1_PAGE}} -> https://university.edu/dr-ahmed
--->
-
 <!doctype html>
 <html lang="en" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Anti‑Violence Units</title>
-  <style>
-    :root{
-      --bg:#f2f5f9;
-      --card:#ffffff;
-      --accent:#0b63d6;
-      --muted:#6b7280;
-    }
-    body{
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif;
-      background:var(--bg);
-      margin:0;padding:24px;color:#111;
-    }
-    .container{max-width:1000px;margin:0 auto}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Anti‑Violence Units</title>
+    <style>
+        :root {
+            /* Color Palette for Formal/Trustworthy Look */
+            --bg: #f5f7fa; /* Lighter background */
+            --card: #ffffff;
+            --accent: #1f3d7a; /* Deep, professional blue */
+            --secondary-accent: #e53935; /* Subtle red for urgency/important links */
+            --text-dark: #1a202c; /* Very dark text */
+            --text-muted: #4a5568; /* Darker muted text */
+            --shadow: rgba(23, 27, 36, 0.08); /* More subtle shadow */
+        }
 
-    /* Logo area */
-    .logo-area{
-      width:100%;height:140px;
-      border-radius:14px;
-      background:#e2e8f0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:20px;
-      font-size:1.2rem;
-      color:#444;
-      border:2px dashed #cbd5e1;
-    }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 24px;
+            color: var(--text-dark);
+            direction: rtl; /* Ensure correct RTL behavior */
+            text-align: right;
+        }
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    h1{font-size:1.6rem;margin:0;line-height:1.3}
+        .container { max-width: 1000px; margin: 0 auto; }
 
-    .subtitle{font-size:0.9rem;color:#374151;margin-top:4px}
+        /* --- Logo Area (Banner) --- */
+        .logo-area {
+            width: 100%;
+            padding: 20px 0;
+            background: var(--card);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px var(--shadow); /* Formal shadow */
+        }
 
-    .actions{display:flex;gap:10px;align-items:center}
-    button, a.btn{
-      padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;
-      background:#fff;border:1px solid #e5e7eb;color:#111;cursor:pointer;
-      display:flex;align-items:center;gap:6px
-    }
-    a.primary{background:var(--accent);color:#fff;border:none}
+        .logo-area img {
+            max-width: 180px; /* Slightly larger logo */
+            height: auto;
+            display: block;
+        }
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
-    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(12,16,23,0.06)}
-    .name{font-weight:700;font-size:1.05rem}
-    .title{color:var(--muted);margin-top:6px}
-    .contact{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-    .small{font-size:0.95rem;color:var(--muted)}
+        /* --- Header and Typography --- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0; /* Separator line */
+        }
 
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:0.9rem}
+        h1 {
+            font-size: 2.2rem; /* Larger main title */
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--accent);
+        }
 
-    @media(max-width:480px){body{padding:12px}h1{font-size:1.3rem}}
-  </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* --- Actions/Buttons --- */
+        .actions { display: flex; gap: 10px; align-items: center; }
+        
+        button, a.btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            background-color: #fff;
+        }
+
+        a.primary {
+            background: var(--accent);
+            color: #fff;
+            border: 1px solid var(--accent);
+        }
+
+        a.primary:hover {
+            background: #102e60; /* Darker hover */
+        }
+
+        button:hover {
+            background: #f0f4f8;
+        }
+
+        /* --- Grid and Cards --- */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 5px;
+            border-right: 4px solid var(--accent); /* Formal divider */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider minimum */
+            gap: 20px; /* Increased gap for breathing room */
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px; /* More padding */
+            box-shadow: 0 4px 12px var(--shadow);
+            border-top: 4px solid var(--accent); /* Formal accent bar */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 1.2rem; /* Larger name */
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .title {
+            color: var(--text-muted);
+            font-size: 1rem;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .contact {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .small {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .small a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .small a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* --- Media Query --- */
+        @media(max-width:480px){
+            body{padding:12px}
+            h1{font-size:1.8rem}
+            .subtitle { font-size: 0.9rem; }
+            .card { padding: 15px; }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
+    <div class="container">
 
-    <!-- Logo Area -->
-    <div class="logo-area"><img src="logo.jpg" alt="University Anti-Violence Unit Logo" style="max-width:160px; height:auto;">
-</div>
-
-    <header>
-      <div>
-        <h1>
-          Anti-violence units in universities
-          <div class="subtitle">Together to combat violence against women</div>
-        </h1>
-      </div>
-
-      <div class="actions">
-        <button onclick="window.print()"><i class="fas fa-print"></i> طباعة</button>
-        <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
-          <i class="fab fa-facebook"></i> صفحتنا
-        </a>
-      </div>
-    </header>
-
-    <section class="grid">
-
-      <article class="card">
-        <div class="name">Dr Asmaa Elziny</div>
-        <div class="title">Religious Consultant</div>
-        <div class="contact">
-          <div class="small">📞 <a href="tel:+201119055767">+201119055767</a></div>
+        <div class="logo-area">
+            <img src="logo.jpg" alt="University Anti-Violence Unit Logo">
         </div>
-      </article>
 
-      <article class="card">
-        <div class="name">Dr Sabrein Abo‑Shosha</div>
-        <div class="title">Psychology Consultant</div>
-        <div class="contact">
-          <div class="small">📞 <a href="tel:+201062622097">+201062622097</a></div>
-        </div>
-      </article>
+        <header>
+            <div>
+                <h1>
+                    Anti-violence units in universities
+                </h1>
+                <div class="subtitle">Together to combat violence against women</div>
+            </div>
 
-      <article class="card">
-        <div class="name">Shorouk Lawyer</div>
-        <div class="title">Legal Consultant</div>
-        <div class="contact">
-          <div class="small">📞 <a href="tel:+201033360063">+201033360063</a></div>
-        </div>
-      </article>
+            <div class="actions">
+                <button onclick="window.print()"><i class="fas fa-print"></i> طباعة</button>
+                <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
+                    <i class="fab fa-facebook"></i> صفحتنا
+                </a>
+            </div>
+        </header>
 
-      <article class="card">
-        <div class="name">Safe Women Units</div>
-        <div class="title">Combating violence against women</div>
-        <div class="contact">
-          <div class="small">📞 <a href="tel:15115">15115</a></div>
-          <div class="small"><i class="fas fa-globe"></i> <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">الموقع الرسمي</a></div>
-        </div>
-      </article>
+        <h2 class="section-title">فريق الاستشاريين (Consultation Team)</h2>
+        <section class="grid">
 
-    </section>
+            <article class="card">
+                <div class="name">Dr Asmaa Elziny</div>
+                <div class="title">Religious Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+201119055767">+201119055767</a>
+                    </div>
+                </div>
+            </article>
 
-    <footer>
-      HTTPS (Together to combat violence against women)
-    </footer>
+            <article class="card">
+                <div class="name">Dr Sabrein Abo‑Shosha</div>
+                <div class="title">Psychology Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+201062622097">+201062622097</a>
+                    </div>
+                </div>
+            </article>
 
-  </div>
+            <article class="card">
+                <div class="name">Shorouk Lawyer</div>
+                <div class="title">Legal Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+201033360063">+201033360063</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <h2 class="section-title">جهات الدعم الخارجية (External Support Agencies)</h2>
+        <section class="grid">
+            
+            <article class="card">
+                <div class="name">Safe Women Units</div>
+                <div class="title">Combating violence against women (Hotline)</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:15115" style="color: var(--secondary-accent); font-weight: 700;">15115 (Emergency Hotline)</a>
+                    </div>
+                    <div class="small">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">الموقع الرسمي</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#">سياسة الخصوصية</a> |
+                <a href="#">خريطة الموقع</a> |
+                <a href="#">اتصل بنا</a>
+            </div>
+            <p>
+                &copy; 2025 Anti-violence units in universities. All rights reserved.
+            </p>
+            <p>
+                (Together to combat violence against women)
+            </p>
+        </footer>
+
+    </div>
 </body>
 </html>
-
-
-
-
-
-
