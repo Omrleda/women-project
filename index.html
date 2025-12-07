@@ -19,99 +19,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title></title>
+  <title>Anti‑Violence Units</title>
   <style>
-    :root{--bg:#f7fafc;--card:#ffffff;--accent:#0b63d6;--muted:#6b7280}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif;background:var(--bg);margin:0;padding:24px;color:#111}
-    .container{max-width:900px;margin:0 auto}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    h1{font-size:1.6rem;margin:0}
-    p.lead{margin:6px 0 18px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    :root{
+      --bg:#f2f5f9;
+      --card:#ffffff;
+      --accent:#0b63d6;
+      --muted:#6b7280;
+    }
+    body{
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif;
+      background:var(--bg);
+      margin:0;padding:24px;color:#111;
+    }
+    .container{max-width:1000px;margin:0 auto}
+
+    /* Logo area */
+    .logo-area{
+      width:100%;height:140px;
+      border-radius:14px;
+      background:#e2e8f0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:20px;
+      font-size:1.2rem;
+      color:#444;
+      border:2px dashed #cbd5e1;
+    }
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    h1{font-size:1.6rem;margin:0;line-height:1.3}
+
+    .subtitle{font-size:0.9rem;color:#374151;margin-top:4px}
+
+    .actions{display:flex;gap:10px;align-items:center}
+    button, a.btn{
+      padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;
+      background:#fff;border:1px solid #e5e7eb;color:#111;cursor:pointer;
+      display:flex;align-items:center;gap:6px
+    }
+    a.primary{background:var(--accent);color:#fff;border:none}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
     .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(12,16,23,0.06)}
     .name{font-weight:700;font-size:1.05rem}
     .title{color:var(--muted);margin-top:6px}
     .contact{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-    a.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
-    a.primary{background:var(--accent);color:#fff}
-    a.ghost{border:1px solid #e5e7eb;color:var(--accent)}
     .small{font-size:0.95rem;color:var(--muted)}
+
     footer{margin-top:20px;text-align:center;color:var(--muted);font-size:0.9rem}
-    .actions{display:flex;gap:8px;align-items:center}
-    @media (max-width:420px){body{padding:12px}h1{font-size:1.2rem}}
+
+    @media(max-width:480px){body{padding:12px}h1{font-size:1.3rem}}
   </style>
-</head>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 <body>
   <div class="container">
+
+    <!-- Logo Area -->
+    <div class="logo-area">ضع اللوجو هنا</div>
+
     <header>
       <div>
-        <h1>Anti-violence units in universities
-          <div style="font-size:0.8rem;color:#374151">Together to combat violence against women</div>
+        <h1>
+          Anti-violence units in universities
+          <div class="subtitle">Together to combat violence against women</div>
         </h1>
       </div>
+
       <div class="actions">
-        <button onclick="window.print()" class="btn"><i class="fas fa-clock"></i></button>
-        <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary"> </a>
+        <button onclick="window.print()"><i class="fas fa-print"></i> طباعة</button>
+        <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
+          <i class="fab fa-facebook"></i> صفحتنا
+        </a>
       </div>
     </header>
 
-    <p class="lead"></p>
-
     <section class="grid">
-      <!-- Doctor 1 -->
+
       <article class="card">
-        <div class="name">Dr asmaa elziny</div>
-        <div class="title">Religious consult</div>
+        <div class="name">Dr Asmaa Elziny</div>
+        <div class="title">Religious Consultant</div>
         <div class="contact">
-        <!-- <div class="small">📧 <a href="mailto:{{DR1_EMAIL}}">{{DR1_EMAIL}}</a></div> -->
           <div class="small">📞 <a href="tel:+201119055767">+201119055767</a></div>
-        <!--  <div class="small">🔗 صفحة: <a href="{{DR1_PAGE}}" target="_blank" rel="noopener noreferrer">عرض الصفحة</a></div>-->
         </div>
       </article>
 
-      <!-- Doctor 2 -->
       <article class="card">
-        <div class="name">Dr.Sabrein Abo-Shosha</div>
-        <div class="title">Psychology consultant</div>
+        <div class="name">Dr Sabrein Abo‑Shosha</div>
+        <div class="title">Psychology Consultant</div>
         <div class="contact">
-         <!-- <div class="small">📧 <a href="mailto:{{DR2_EMAIL}}">{{DR2_EMAIL}}</a></div>-->
-          <div class="small">📞 <a href="tel:{{DR2_PHONE}}">+201062622097</a></div>
-        <!--  <div class="small">🔗 صفحة: <a href="{{DR2_PAGE}}" target="_blank" rel="noopener noreferrer">عرض الصفحة</a></div>-->
+          <div class="small">📞 <a href="tel:+201062622097">+201062622097</a></div>
         </div>
       </article>
 
-      <!-- Doctor 3 -->
       <article class="card">
-        <div class="name">Shorouk lawyer</div>
-        <div class="title">Legal consult</div>
+        <div class="name">Shorouk Lawyer</div>
+        <div class="title">Legal Consultant</div>
         <div class="contact">
-        <!--  <div class="small">📧 <a href="mailto:{{DR3_EMAIL}}">{{DR3_EMAIL}}</a></div>-->
-          <div class="small">📞 <a href="tel:{{DR3_PHONE}}">+201033360063</a></div>
-       <!--   <div class="small">🔗 صفحة: <a href="{{DR3_PAGE}}" target="_blank" rel="noopener noreferrer">عرض الصفحة</a></div>-->
+          <div class="small">📞 <a href="tel:+201033360063">+201033360063</a></div>
         </div>
       </article>
 
-      <!-- Doctor 4 -->
       <article class="card">
         <div class="name">Safe Women Units</div>
         <div class="title">Combating violence against women</div>
         <div class="contact">
-         <!-- <div class="small">📧 <a href="mailto:{{DR4_EMAIL}}">{{DR4_EMAIL}}</a></div>-->
-          <div class="small">📞 <a href="tel:{{DR4_PHONE}}">15115</a></div>
-          <div class="small">🔗 صفحة: <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank" rel="noopener noreferrer"></a></div>
+          <div class="small">📞 <a href="tel:15115">15115</a></div>
+          <div class="small"><i class="fas fa-globe"></i> <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">الموقع الرسمي</a></div>
         </div>
       </article>
 
     </section>
 
     <footer>
-       HTTPS (Together to combat violence against women).
+      HTTPS (Together to combat violence against women)
     </footer>
 
   </div>
 </body>
 </html>
-
 
 
