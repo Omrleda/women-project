@@ -1,397 +1,305 @@
 <!doctype html>
 <html lang="en" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Equal Opportunities and Anti-Violence Unit</title>
-    <style>
-        :root {
-            /* Pink/Maroon Color Palette for Formal Look */
-            --bg: #fce4ec; /* Very light, soft pink background */
-            --card: #ffffff;
-            --accent: #880e4f; /* Deep Maroon/Rose for primary color (Formal) */
-            --secondary-accent: #d81b60; /* Bright Pink for urgency/important links */
-            --text-dark: #373434; /* Dark gray for high contrast text */
-            --text-muted: #6a6a6a; /* Muted gray text */
-            --shadow: rgba(136, 14, 79, 0.1); /* Subtle shadow matching accent */
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
-            background: var(--bg);
-            margin: 0;
-            padding: 24px;
-            color: var(--text-dark);
-            direction: rtl; 
-            text-align: right;
-        }
-
-        .container { max-width: 1000px; margin: 0 auto; }
-
-        /* --- Logo Area (Banner) --- */
-        .logo-area {
-            width: 100%;
-            padding: 20px 0;
-            background: var(--card);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px var(--shadow); 
-        }
-
-        .logo-area img {
-            max-width: 180px; 
-            height: auto;
-            display: block;
-        }
-
-        /* --- Header and Typography --- */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f095b8; /* Pinker separator line */
-        }
-
-        h1 {
-            font-size: 2.2rem; 
-            margin: 0;
-            line-height: 1.2;
-            font-weight: 700;
-            color: var(--accent); /* Maroon color */
-        }
-
-        .university-name {
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-top: 5px;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-            font-weight: 400;
-        }
-
-        /* --- Actions/Buttons --- */
-        .actions { display: flex; gap: 10px; align-items: center; }
-        
-        button, a.btn {
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid #f095b8; /* Pink border */
-            color: var(--text-dark);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            background-color: #fff;
-        }
-
-        a.primary {
-            background: var(--accent); /* Maroon color */
-            color: #fff;
-            border: 1px solid var(--accent);
-        }
-
-        a.primary:hover {
-            background: #5c0029; /* Darker maroon hover */
-        }
-
-        button:hover {
-            background: #f8e1e1; /* Lighter pink hover */
-        }
-
-        /* --- Grid and Cards --- */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-right: 5px;
-            border-right: 4px solid var(--accent); /* Maroon divider */
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-        }
-
-        .card {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 20px; 
-            box-shadow: 0 4px 12px var(--shadow);
-            border-top: 4px solid var(--accent); /* Maroon accent bar */
-            display: flex;
-            flex-direction: column;
-        }
-
-        .name {
-            font-weight: 700;
-            font-size: 1.2rem; 
-            color: var(--accent); /* Maroon color */
-            margin-bottom: 4px;
-        }
-
-        .title {
-            color: var(--text-muted);
-            font-size: 1rem;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #f095b8;
-        }
-
-        .contact {
-            margin-top: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .small {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .small a {
-            color: var(--accent); /* Maroon link color */
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .small a:hover {
-            text-decoration: underline;
-        }
-        
-        /* --- NEW: Form Elements Styling --- */
-        .form-group {
-            margin-bottom: 15px;
-            text-align: right; /* RTL alignment */
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Equal Opportunities and Anti-Violence Unit</title>
+    <style>
+        :root {
+            /* Pink/Maroon Color Palette for Formal Look */
+            --bg: #fce4ec; /* Very light, soft pink background */
+            --card: #ffffff;
+            --accent: #880e4f; /* Deep Maroon/Rose for primary color (Formal) */
+            --secondary-accent: #d81b60; /* Bright Pink for urgency/important links */
+            --text-dark: #373434; /* Dark gray for high contrast text */
+            --text-muted: #6a6a6a; /* Muted gray text */
+            --shadow: rgba(136, 14, 79, 0.1); /* Subtle shadow matching accent */
         }
 
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 5px;
+        body {
+            font-family: 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 24px;
             color: var(--text-dark);
+            direction: rtl; 
+            text-align: right;
         }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        /* --- Logo Area (Banner) --- */
+        .logo-area {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-sizing: border-box; /* Important for padding/width calculation */
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-            text-align: right; /* RTL alignment */
-            direction: rtl; /* Ensures text entry is right-to-left */
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: var(--secondary-accent); /* Bright pink focus */
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(216, 27, 96, 0.2);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--secondary-accent); /* Use bright pink for urgency/action */
-            color: #fff;
-            border: none;
-            padding: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 8px; /* Match other buttons */
-            transition: background 0.2s;
+            padding: 20px 0;
+            background: var(--card);
+            border-radius: 12px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px var(--shadow); 
         }
 
-        .submit-btn:hover {
-            background: #c31252; /* Darker pink hover */
+        .logo-area img {
+            max-width: 180px; 
+            height: auto;
+            display: block;
         }
-        /* --- END NEW: Form Elements Styling --- */
 
-        /* --- Footer --- */
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #f095b8;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        /* --- Header and Typography --- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f095b8; /* Pinker separator line */
+        }
 
-        .footer-links a {
-            color: var(--accent); /* Maroon link color */
-            text-decoration: none;
-            margin: 0 10px;
-        }
+        h1 {
+            font-size: 2.2rem; 
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--accent); /* Maroon color */
+        }
 
-        /* --- Media Query --- */
-        @media(max-width:480px){
-            body{padding:12px}
-            h1{font-size:1.8rem}
-            .university-name { font-size: 1.1rem; }
-            .subtitle { font-size: 0.9rem; }
-            .card { padding: 15px; }
-        }
-    </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        .university-name {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* --- Actions/Buttons --- */
+        .actions { display: flex; gap: 10px; align-items: center; }
+        
+        button, a.btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #f095b8; /* Pink border */
+            color: var(--text-dark);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            background-color: #fff;
+        }
+
+        a.primary {
+            background: var(--accent); /* Maroon color */
+            color: #fff;
+            border: 1px solid var(--accent);
+        }
+
+        a.primary:hover {
+            background: #5c0029; /* Darker maroon hover */
+        }
+
+        button:hover {
+            background: #f8e1e1; /* Lighter pink hover */
+        }
+
+        /* --- Grid and Cards --- */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 5px;
+            border-right: 4px solid var(--accent); /* Maroon divider */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px; 
+            box-shadow: 0 4px 12px var(--shadow);
+            border-top: 4px solid var(--accent); /* Maroon accent bar */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 1.2rem; 
+            color: var(--accent); /* Maroon color */
+            margin-bottom: 4px;
+        }
+
+        .title {
+            color: var(--text-muted);
+            font-size: 1rem;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #f095b8;
+        }
+
+        .contact {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .small {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .small a {
+            color: var(--accent); /* Maroon link color */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .small a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #f095b8;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: var(--accent); /* Maroon link color */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* --- Media Query --- */
+        @media(max-width:480px){
+            body{padding:12px}
+            h1{font-size:1.8rem}
+            .university-name { font-size: 1.1rem; }
+            .subtitle { font-size: 0.9rem; }
+            .card { padding: 15px; }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container">
 
-        <div class="logo-area">
-            <img src="logo.jpg" alt="University Anti-Violence Unit Logo">
-        </div>
+        <div class="logo-area">
+            <img src="logo.jpg" alt="University Anti-Violence Unit Logo">
+        </div>
 
-        <header>
-            <div>
-                <h1>
-                    Equal Opportunities and Anti-Violence Against Women Unit
-                </h1>
-                <div class="university-name">New Cairo Technological University</div>
-                <div class="subtitle">Together to combat violence against women</div>
-            </div>
+        <header>
+            <div>
+                <h1>
+                    Equal Opportunities and Anti-Violence Against Women Unit
+                </h1>
+                <div class="university-name">New Cairo Technological University</div>
+                <div class="subtitle">Together to combat violence against women</div>
+            </div>
 
-            <div class="actions">
-                <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
-                    <i class="fab fa-facebook"></i> Our Facebook page
-                </a>
-            </div>
-        </header>
+            <div class="actions">
+                <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
+                    <i class="fab fa-facebook"></i> Our Facebook page
+                </a>
+            </div>
+        </header>
 
-        <h2 class="section-title">Medical Support Team </h2>
-        <section class="grid">
+        <h2 class="section-title">Support and Consultation Team (فريق الدعم والاستشارات)</h2>
+        <section class="grid">
 
-            <article class="card">
-                <div class="name">Dr Sabrein Abo‑Shosha</div>
-                <div class="title">Psychology Consultant</div>
-                <div class="contact">
-                    <div class="small">
-                        <i class="fas fa-brain"></i>
-                        <a href="tel:+201062622097">+201062622097</a>
-                    </div>
-                </div>
-            </article>
-
-           <!-- <article class="card">
-                <div class="name">Dr Asmaa Elziny</div>
-                <div class="title">Religious Consultant</div>
-                <div class="contact">
-                    <div class="small">
-                        <i class="fas fa-hands-helping"></i>
-                        <a href="tel:+201119055767">+201119055767</a>
-                    </div>
-                </div>
-            </article> -->
-
-            <article class="card">
-                <div class="name">Shorouk Lawyer</div>
-                <div class="title">Legal Consultant</div>
-                <div class="contact">
-                    <div class="small">
-                        <i class="fas fa-balance-scale"></i>
-                        <a href="tel:+201033360063">+201033360063</a>
-                    </div>
-                </div>
-            </article>
-
-        </section>
-
-        <h2 class="section-title">External Support Agencies </h2>
-        <section class="grid">
-            
-            <article class="card">
-                <div class="name">Safe Women Units</div>
-                <div class="title">Combating violence against women (Hotline)</div>
-                <div class="contact">
-                    <div class="small">
-                        <i class="fas fa-headset"></i> 
-                        <a href="tel:15115" style="color: var(--secondary-accent); font-weight: 700;">15115 (Emergency Hotline)</a>
-                    </div>
-                    <div class="small">
-                        <i class="fas fa-globe"></i>
-                        <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">Official Website</a>
-                    </div>
-                </div>
-            </article>
-
-        </section>
-        
-        <h2 class="section-title">Report an Incident / File a Complaint 📝</h2>
-        <section>
             <article class="card">
-                <form action="/submit-complaint" method="POST">
-                    <div class="form-group">
-                        <label for="reporter-name">Your Full Name (Optional - to maintain anonymity)</label>
-                        <input type="text" id="reporter-name" name="reporter_name" placeholder="Enter your name, or leave blank for anonymity">
+                <div class="name">Dr Sabrein Abo‑Shosha</div>
+                <div class="title">Psychology Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-brain"></i>
+                        <a href="tel:+201062622097">+201062622097</a>
                     </div>
-
-                    <div class="form-group">
-                        <label for="reporter-email">Email or Phone Number for Follow-up (Required)</label>
-                        <input type="email" id="reporter-email" name="reporter_email" required placeholder="Required for follow-up and confidential communication">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="incident-type">Type of Complaint/Incident (Required)</label>
-                        <input type="text" id="incident-type" name="incident_type" required placeholder="e.g., Harassment, Discrimination, Bullying">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="incident-details">Details of the Incident (Be specific) (Required)</label>
-                        <textarea id="incident-details" name="incident_details" required placeholder="Please describe the incident, including dates, times, and location."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Submit Confidential Complaint
-                    </button>
-                </form>
+                </div>
             </article>
-        </section>
-                <footer>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Site Map</a> |
-                <a href="#">Contact Us</a>
-            </div>
-            <p>
-                &copy; 2025 Equal Opportunities and Anti-Violence Against Women Unit. All rights reserved.
-            </p>
-            <p>
-                (Together to combat violence against women)
-            </p>
-        </footer>
 
-    </div>
+            <article class="card">
+                <div class="name">Dr Asmaa Elziny</div>
+                <div class="title">Religious Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-hands-helping"></i>
+                        <a href="tel:+201119055767">+201119055767</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="name">Shorouk Lawyer</div>
+                <div class="title">Legal Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-balance-scale"></i>
+                        <a href="tel:+201033360063">+201033360063</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <h2 class="section-title">External Support Agencies (جهات الدعم الخارجية)</h2>
+        <section class="grid">
+            
+            <article class="card">
+                <div class="name">Safe Women Units</div>
+                <div class="title">Combating violence against women (Hotline)</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-headset"></i> 
+                        <a href="tel:15115" style="color: var(--secondary-accent); font-weight: 700;">15115 (Emergency Hotline)</a>
+                    </div>
+                    <div class="small">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">Official Website</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Site Map</a> |
+                <a href="#">Contact Us</a>
+            </div>
+            <p>
+                &copy; 2025 Equal Opportunities and Anti-Violence Against Women Unit. All rights reserved.
+            </p>
+            <p>
+                (Together to combat violence against women)
+            </p>
+        </footer>
+
+    </div>
 </body>
 </html>
