@@ -304,7 +304,7 @@
                 </div>
             </article>
 
-            <article class="card">
+           <!-- <article class="card">
                 <div class="name">Dr Asmaa Elziny</div>
                 <div class="title">Religious Consultant</div>
                 <div class="contact">
@@ -313,7 +313,7 @@
                         <a href="tel:+201119055767">+201119055767</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <article class="card">
                 <div class="name">Shorouk Lawyer</div>
@@ -348,27 +348,27 @@
 
         </section>
         
-        <h2 class="section-title">Report an Incident / File a Complaint</h2>
+        <h2 class="section-title">Report an Incident / File a Complaint 📝</h2>
         <section>
             <article class="card">
                 <form action="/submit-complaint" method="POST">
                     <div class="form-group">
-                        <label for="reporter-name">Your Full Name (Optional)</label>
+                        <label for="reporter-name">Your Full Name (Optional - to maintain anonymity)</label>
                         <input type="text" id="reporter-name" name="reporter_name" placeholder="Enter your name, or leave blank for anonymity">
                     </div>
 
                     <div class="form-group">
-                        <label for="reporter-email">Email or Phone Number for Follow-up</label>
+                        <label for="reporter-email">Email or Phone Number for Follow-up (Required)</label>
                         <input type="email" id="reporter-email" name="reporter_email" required placeholder="Required for follow-up and confidential communication">
                     </div>
                     
                     <div class="form-group">
-                        <label for="incident-type">Type of Complaint/Incident</label>
+                        <label for="incident-type">Type of Complaint/Incident (Required)</label>
                         <input type="text" id="incident-type" name="incident_type" required placeholder="e.g., Harassment, Discrimination, Bullying">
                     </div>
 
                     <div class="form-group">
-                        <label for="incident-details">Details of the Incident (Be specific)</label>
+                        <label for="incident-details">Details of the Incident (Be specific) (Required)</label>
                         <textarea id="incident-details" name="incident_details" required placeholder="Please describe the incident, including dates, times, and location."></textarea>
                     </div>
 
