@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="en" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Anti‑Violence Units</title>
+    <title>Equal Opportunities and Anti-Violence Unit</title>
     <style>
         :root {
             /* Color Palette for Formal/Trustworthy Look */
@@ -66,6 +67,13 @@
             color: var(--accent);
         }
 
+        .university-name {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -118,14 +126,14 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider minimum */
-            gap: 20px; /* Increased gap for breathing room */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
         }
 
         .card {
             background: var(--card);
             border-radius: 12px;
-            padding: 20px; /* More padding */
+            padding: 20px; 
             box-shadow: 0 4px 12px var(--shadow);
             border-top: 4px solid var(--accent); /* Formal accent bar */
             display: flex;
@@ -134,7 +142,7 @@
 
         .name {
             font-weight: 700;
-            font-size: 1.2rem; /* Larger name */
+            font-size: 1.2rem; 
             color: var(--accent);
             margin-bottom: 4px;
         }
@@ -191,6 +199,7 @@
         @media(max-width:480px){
             body{padding:12px}
             h1{font-size:1.8rem}
+            .university-name { font-size: 1.1rem; }
             .subtitle { font-size: 0.9rem; }
             .card { padding: 15px; }
         }
@@ -207,37 +216,39 @@
         <header>
             <div>
                 <h1>
-                    Anti-violence units in universities
+                    Equal Opportunities and Anti-Violence Against Women Unit
                 </h1>
+                <div class="university-name">New Cairo Technological University</div>
                 <div class="subtitle">Together to combat violence against women</div>
             </div>
 
             <div class="actions">
-                <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">صفحة الفيسبوك الخاصة بنا</a>
+                <button onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+                <a href="https://www.facebook.com/profile.php?id=61575322980494&locale=ar_AR" class="btn primary">
+                    <i class="fab fa-facebook"></i> Our Facebook page
+                </a>
             </div>
         </header>
 
-        <h2 class="section-title">فريق الاستشاريين (Consultation Team)</h2>
+        <h2 class="section-title">Support and Consultation Team (فريق الدعم والاستشارات)</h2>
         <section class="grid">
-
-            <article class="card">
-                <div class="name">Dr Asmaa Elziny</div>
-                <div class="title">Religious Consultant</div>
-                <div class="contact">
-                    <div class="small">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:+201119055767">+201119055767</a>
-                    </div>
-                </div>
-            </article>
 
             <article class="card">
                 <div class="name">Dr Sabrein Abo‑Shosha</div>
                 <div class="title">Psychology Consultant</div>
                 <div class="contact">
                     <div class="small">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:+201062622097">+201062622097</a>
+                        <i class="fas fa-brain"></i> <a href="tel:+201062622097">+201062622097</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="name">Dr Asmaa Elziny</div>
+                <div class="title">Religious Consultant</div>
+                <div class="contact">
+                    <div class="small">
+                        <i class="fas fa-hands-helping"></i> <a href="tel:+201119055767">+201119055767</a>
                     </div>
                 </div>
             </article>
@@ -247,15 +258,14 @@
                 <div class="title">Legal Consultant</div>
                 <div class="contact">
                     <div class="small">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:+201033360063">+201033360063</a>
+                        <i class="fas fa-balance-scale"></i> <a href="tel:+201033360063">+201033360063</a>
                     </div>
                 </div>
             </article>
 
         </section>
 
-        <h2 class="section-title">جهات الدعم الخارجية (External Support Agencies)</h2>
+        <h2 class="section-title">External Support Agencies (جهات الدعم الخارجية)</h2>
         <section class="grid">
             
             <article class="card">
@@ -263,12 +273,11 @@
                 <div class="title">Combating violence against women (Hotline)</div>
                 <div class="contact">
                     <div class="small">
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:15115" style="color: var(--secondary-accent); font-weight: 700;">15115 (Emergency Hotline)</a>
+                        <i class="fas fa-headset"></i> <a href="tel:15115" style="color: var(--secondary-accent); font-weight: 700;">15115 (Emergency Hotline)</a>
                     </div>
                     <div class="small">
                         <i class="fas fa-globe"></i>
-                        <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">الموقع الرسمي</a>
+                        <a href="https://egypt.unfpa.org/en/publications/safe-women-clinics-directory" target="_blank">Official Website</a>
                     </div>
                 </div>
             </article>
@@ -277,12 +286,12 @@
 
         <footer>
             <div class="footer-links">
-                <a href="#">سياسة الخصوصية</a> |
-                <a href="#">خريطة الموقع</a> |
-                <a href="#">اتصل بنا</a>
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Site Map</a> |
+                <a href="#">Contact Us</a>
             </div>
             <p>
-                &copy; 2025 Anti-violence units in universities. All rights reserved.
+                &copy; 2025 Equal Opportunities and Anti-Violence Against Women Unit. All rights reserved.
             </p>
             <p>
                 (Together to combat violence against women)
@@ -292,4 +301,5 @@
     </div>
 </body>
 </html>
+
 
